@@ -12,4 +12,5 @@
 /boot/dtb/marvell/catdrive.dtb
 /etc/update-motd.d/10-armbian-header
 /usr/sbin/nand-sata-install
+/etc/hostname
 ```
