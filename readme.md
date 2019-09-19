@@ -14,3 +14,4 @@
 /usr/sbin/nand-sata-install
 /etc/hostname
 ```
+##### 刷机参考 [hanwckf 猫盘 (ARMADA A3720) 刷机教程](https://www.jianshu.com/p/77e529fb35f9)
