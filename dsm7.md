@@ -34,3 +34,18 @@ export PATH
 ```sudo synogroup --add docker
 sudo synogroup --member docker $USER
 sudo chown root:Docker /var/run/docker.sock```
+
+###休眠
+```mount -o bind /dev/null /var/log/scemd.log || true```
+
+
+### ssh免密码登录
+```ssh免密
+chmod 755 ~
+chmod 600 ~/.ssh/authorized keys
+chmod 700 ~/.ssh
+
+/etc/ssh/sshd_config
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized keys```
