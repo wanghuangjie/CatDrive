@@ -39,7 +39,8 @@ sudo chown root:Docker /var/run/docker.sock
 
 ### 休眠
 
-```mount -o bind /dev/null /var/log/scemd.log || true
+```
+mount -o bind /dev/null /var/log/scemd.log || true
 ```
 
 
