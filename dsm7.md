@@ -75,7 +75,7 @@ do
 sata="\$(hdparm -C /dev/sda |grep 'drive'|awk '{print \$4}')"
 ledss="\$(cat /tmp/scripts/leds.flag)"
 if [ \$sata = standby ];then
-i2cset -y -f 0 0x45 0x33 0x73 #最大电流 (呼吸)
+i2cset -y -f 0 0x45 0x33 0x73 #呼吸
 i2cset -y -f 0 0x45 0x3d 0x55
 i2cset -y -f 0 0x45 0x3e 0x55
 i2cset -y -f 0 0x45 0x36 200
@@ -83,7 +83,7 @@ echo 0 > /sys/class/gpio/gpio450/value
 fi
 if [ \$sata = active/idle ];then
 sata_temp="\$(smartctl -a /dev/hda -d ata | sed -n '/Temperature_Celsius/p' | awk '{print \$10}')"
-i2cset -y -f 0 0x45 0x33 0x03 #最大电流 (呼吸)
+i2cset -y -f 0 0x45 0x33 0x03 #常量
 i2cset -y -f 0 0x45 0x36 100       #B
 echo 1 > /sys/class/gpio/gpio450/value
 fi
