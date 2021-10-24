@@ -57,9 +57,9 @@ PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 ```
 
-### 开启led灯 - 休眠时慢闪，唤醒常亮
+### 开启led灯 - 休眠时慢闪，唤醒常亮。 添加到开机任务
 
-mount -o bind /dev/null /var/log/scemd.log || true
+```
 mkdir -p /tmp/scripts
 cat > /tmp/scripts/ledfan.sh <<EOF
 #!/bin/sh
@@ -91,3 +91,4 @@ sleep 60
 done
 EOF
 bash /tmp/scripts/ledfan.sh
+```
