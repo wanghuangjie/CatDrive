@@ -73,7 +73,6 @@ i2cset -y -f 0 0x45 0x30 0x07
 while true
 do
 sata="\$(hdparm -C /dev/sda |grep 'drive'|awk '{print \$4}')"
-ledss="\$(cat /tmp/scripts/leds.flag)"
 if [ \$sata = standby ];then
 i2cset -y -f 0 0x45 0x33 0x73 #呼吸
 i2cset -y -f 0 0x45 0x3d 0x55
