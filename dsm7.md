@@ -83,7 +83,7 @@ echo 0 > /sys/class/gpio/gpio450/value
 fi
 if [ \$sata = active/idle ];then
 sata_temp="\$(smartctl -a /dev/hda -d ata | sed -n '/Temperature_Celsius/p' | awk '{print \$10}')"
-i2cset -y -f 0 0x45 0x33 0x03 #常量
+i2cset -y -f 0 0x45 0x33 0x03 #常亮
 i2cset -y -f 0 0x45 0x36 100       #B
 echo 1 > /sys/class/gpio/gpio450/value
 fi
